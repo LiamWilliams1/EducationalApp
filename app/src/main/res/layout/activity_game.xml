@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="406dp"
+        android:layout_height="394dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/nt"
+            android:layout_width="207dp"
+            android:layout_height="162dp"
+            android:layout_alignBottom="@+id/wa"
+            android:layout_marginStart="-59dp"
+            android:layout_marginBottom="143dp"
+            android:layout_toEndOf="@+id/wa"
+            android:contentDescription="northernTerritory"
+            android:paddingStart="0dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:src="@drawable/nt" />
+
+        <ImageView
+            android:id="@+id/wa"
+            android:layout_width="166dp"
+            android:layout_height="328dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:contentDescription="westernAustralia"
+            android:paddingStart="30dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:src="@drawable/wa" />
+
+        <ImageView
+            android:id="@+id/qld"
+            android:layout_width="144dp"
+            android:layout_height="225dp"
+            android:layout_alignTop="@+id/nt"
+            android:layout_marginStart="-59dp"
+            android:layout_marginTop="-16dp"
+            android:layout_toEndOf="@+id/nt"
+            android:contentDescription="queensland"
+            android:paddingStart="0dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:src="@drawable/qld" />
+
+        <ImageView
+            android:id="@+id/nsw"
+            android:layout_width="122dp"
+            android:layout_height="116dp"
+            android:layout_below="@+id/qld"
+            android:layout_alignStart="@+id/qld"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="-20dp"
+            android:contentDescription="newsouthwales"
+            android:paddingStart="0dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:src="@drawable/nsw" />
+
+        <ImageView
+            android:id="@+id/sa"
+            android:layout_width="340dp"
+            android:layout_height="337dp"
+            android:contentDescription="southaustralia"
+            android:paddingStart="110dp"
+            android:paddingTop="185dp"
+            android:paddingEnd="0dp"
+            android:src="@drawable/sa" />
+
+        <ImageView
+            android:id="@+id/vic"
+            android:layout_width="95dp"
+            android:layout_height="59dp"
+            android:layout_alignStart="@+id/nsw"
+            android:layout_alignTop="@+id/nsw"
+            android:layout_marginStart="-5dp"
+            android:layout_marginTop="77dp"
+            android:contentDescription="victoria"
+            android:paddingStart="0dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:src="@drawable/vic" />
+
+        <ImageView
+            android:id="@+id/tas"
+            android:layout_width="36dp"
+            android:layout_height="44dp"
+            android:layout_below="@+id/vic"
+            android:layout_alignStart="@+id/vic"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="5dp"
+            android:contentDescription="tasmania"
+            android:paddingStart="0dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="0dp"
+            android:src="@drawable/tas" />
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="52dp"
+        android:layout_height="44dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.69"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:freezesText="true">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="52dp"
+        android:layout_height="44dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="score_0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:freezesText="true"></TextView>
+
+    <TextView
+        android:id="@+id/text_view_question_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Question: 1/x"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toStartOf="@+id/timer"
+        app:layout_constraintStart_toEndOf="@+id/score"
+        app:layout_constraintTop_toTopOf="parent"
+        android:freezesText="true"/>
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="50dp"
+        android:layout_height="55dp"
+        android:src="@drawable/abc_vector_test"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="backbutton" />
+
+    <Button
+        android:id="@+id/confirmButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="bottom"
+        android:text="confirm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        android:freezesText="true"/>
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Question"
+        app:layout_constraintBottom_toTopOf="@+id/radio_group"
+        android:freezesText="true"/>
+
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        app:layout_constraintBottom_toTopOf="@+id/confirmButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/radio_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Option 1"
+            android:freezesText="true"/>
+
+        <RadioButton
+            android:id="@+id/radio_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Option 2"
+            android:freezesText="true"/>
+
+        <RadioButton
+            android:id="@+id/radio_button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Option 3"
+            android:freezesText="true"/>
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,10 +11,8 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -24,12 +22,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Locale;
+
+//import twitter4j.Query;
+//import twitter4j.QueryResult;
+//import twitter4j.Status;
+//import twitter4j.Twitter;
+//import twitter4j.TwitterException;
+//import twitter4j.TwitterFactory;
 
 public class GameActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, View.OnClickListener, SensorEventListener {
     public static final String EXTRA_SCORE = "extraScore";
     private static final long COUNTDOWN_IN_MILLIS = 30000;
+
 
     private TextView textViewQuestion;
     private TextView textViewScore;
@@ -77,7 +82,6 @@ public class GameActivity extends AppCompatActivity implements AdapterView.OnIte
     //private Question currentQuestion;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,17 +101,17 @@ public class GameActivity extends AppCompatActivity implements AdapterView.OnIte
             textColorDefaultRb = rb1.getTextColors();
 
 
-
             if (savedInstanceState == null) {
-            DatabaseHelper dbHelper = new DatabaseHelper(this);
-            questionList = dbHelper.getAllQuestions();
-            questionCountTotal = questionList.size();
-            Collections.shuffle(questionList);
+                DatabaseHelper dbHelper = new DatabaseHelper(this);
+                questionList = dbHelper.getAllQuestions();
+                questionCountTotal = questionList.size();
+                Collections.shuffle(questionList);
 
-            timeLeftInMillis = COUNTDOWN_IN_MILLIS;
-            startCountDown();
-            
-            displayNextQuestion();
+
+                timeLeftInMillis = COUNTDOWN_IN_MILLIS ;
+                startCountDown();
+
+                displayNextQuestion();
             } else {
                 questionList = savedInstanceState.getParcelableArrayList(KEY_QUESTION_LIST);
                 questionCountTotal = questionList.size();
@@ -146,7 +150,7 @@ public class GameActivity extends AppCompatActivity implements AdapterView.OnIte
 //        mainIntent = getIntent();
 //        name = mainIntent.getStringExtra(NAME)
 
-        }
+    }
 
     private void displayNextQuestion() {
         rb1.setTextColor(textColorDefaultRb);
@@ -166,6 +170,7 @@ public class GameActivity extends AppCompatActivity implements AdapterView.OnIte
         } else {
             finishQuiz();
             countDownTimer.cancel();
+            //twitterPost();
         }
     }
 
@@ -208,6 +213,7 @@ public class GameActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         showSolution();
     }
+
     private void showSolution() {
         rb1.setTextColor(Color.RED);
         rb2.setTextColor(Color.RED);
@@ -263,10 +269,21 @@ public class GameActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
 
+    //    public void twitterPost() {
+//        new Thread(() -> {
+//            Twitter twitter = TwitterFactory.getSingleton();
+//            try {
+//                Status status = twitter.updateStatus("" + name + "managed to get a score of " + score + " on ROBOWARE! Can you beat that? ");
+//                System.out.println("Successfully updated the status to [" + status.getText() + "].");
+//            } catch (TwitterException e) {
+//                e.printStackTrace();
+//            }
+//        }).start();
+    //}
     @Override
-        public void onClick(View v) {
+    public void onClick(View v) {
 
-        }
+    }
 
     @Override
     public void onSensorChanged(SensorEvent event) {

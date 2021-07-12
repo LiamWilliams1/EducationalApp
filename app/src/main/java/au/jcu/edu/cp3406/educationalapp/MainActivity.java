@@ -1,7 +1,5 @@
 package au.jcu.edu.cp3406.educationalapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     private static final String NAME = "NAME";
@@ -31,12 +31,29 @@ public class MainActivity extends AppCompatActivity {
         textViewHighscore = findViewById(R.id.text_view_highscore);
         loadHighscore();
         Button startQuiz = findViewById(R.id.playButton);
+        Button settingsbutton = findViewById(R.id.settingsButton);
+//      settingsbutton.setOnClickListener(new View.OnClickListener() {
+//          @Override
+//          public void onClick (View v){
+//          openSettings();
+//                                          }
+        settingsbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openSettings();
+            }
+        });
         startQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick (View v){
-            startQuiz();
-        }
-    });
+            public void onClick(View v) {
+                startQuiz();
+            }
+        });
+    }
+
+    private void openSettings() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
     }
 
     public void startQuiz() {
@@ -46,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         //pulls result back from GameActivity
         startActivityForResult(intent, REQUEST_CODE_QUIZ);
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -59,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
     // stores highscore in so it can update highscore
     private void updateHighscore(int highscoreNew) {
         highscore = highscoreNew;

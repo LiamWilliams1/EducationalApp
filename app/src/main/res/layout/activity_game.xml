@@ -117,6 +117,7 @@
         android:layout_width="52dp"
         android:layout_height="44dp"
         android:layout_gravity="center"
+        android:freezesText="true"
         android:gravity="center"
         android:text="time"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -124,8 +125,7 @@
         app:layout_constraintHorizontal_bias="0.69"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:freezesText="true">
+        app:layout_constraintVertical_bias="0.0">
 
     </TextView>
 
@@ -134,6 +134,7 @@
         android:layout_width="52dp"
         android:layout_height="44dp"
         android:layout_gravity="center"
+        android:freezesText="true"
         android:gravity="center"
         android:text="score_0"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -141,49 +142,48 @@
         app:layout_constraintHorizontal_bias="0.272"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:freezesText="true"></TextView>
+        app:layout_constraintVertical_bias="0.0"></TextView>
 
     <TextView
         android:id="@+id/text_view_question_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:freezesText="true"
         android:text="Question: 1/x"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toStartOf="@+id/timer"
         app:layout_constraintStart_toEndOf="@+id/score"
-        app:layout_constraintTop_toTopOf="parent"
-        android:freezesText="true"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/backButton"
         android:layout_width="50dp"
         android:layout_height="55dp"
+        android:contentDescription="backbutton"
         android:src="@drawable/abc_vector_test"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="backbutton" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/confirmButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:freezesText="true"
         android:gravity="bottom"
         android:text="confirm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        android:freezesText="true"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:freezesText="true"
         android:text="Question"
-        app:layout_constraintBottom_toTopOf="@+id/radio_group"
-        android:freezesText="true"/>
+        app:layout_constraintBottom_toTopOf="@+id/radio_group" />
 
 
     <RadioGroup
@@ -199,22 +199,22 @@
             android:id="@+id/radio_button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Option 1"
-            android:freezesText="true"/>
+            android:freezesText="true"
+            android:text="Option 1" />
 
         <RadioButton
             android:id="@+id/radio_button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Option 2"
-            android:freezesText="true"/>
+            android:freezesText="true"
+            android:text="Option 2" />
 
         <RadioButton
             android:id="@+id/radio_button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Option 3"
-            android:freezesText="true"/>
+            android:freezesText="true"
+            android:text="Option 3" />
     </RadioGroup>
 
 

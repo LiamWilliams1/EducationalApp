@@ -7,9 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import au.jcu.edu.cp3406.educationalapp.GameStructure.*;
+import au.jcu.edu.cp3406.educationalapp.GameStructure.QuestionsTable;
 
 public class DatabaseHelper extends SQLiteOpenHelper{
     private static final String DB_NAME = "quiz.db";
@@ -49,15 +48,15 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
 
     private void fillQuestionsTable() {
-        Question q1 = new Question("A is correct", "A", "B", "C", 1);
+        Question q1 = new Question("The Great Australian Bight is:", "a bay off the central and western portions of the southern coastline of mainland Australia", "a mountain range", "a reef in the barrier reef", 1);
         addQuestion(q1);
-        Question q2 = new Question("B is correct", "A", "B", "C", 2);
+        Question q2 = new Question("The highest Australian mountain is:", "Mount Kosciuszko", "Mount Anatack", "Mount Doom", 2);
         addQuestion(q2);
-        Question q3 = new Question("C is correct", "A", "B", "C", 3);
+        Question q3 = new Question("What is the capital of Australia", "Sydney", "New York", "Canberra", 3);
         addQuestion(q3);
-        Question q4 = new Question("A is correct again", "A", "B", "C", 1);
+        Question q4 = new Question("The Aboriginal name of the Grampians is:", "Uluru", "Gariwerd", "Gungahlin", 1);
         addQuestion(q4);
-        Question q5 = new Question("B is correct again", "A", "B", "C", 2);
+        Question q5 = new Question("Arnhem Land is in:", "Queenland", "New South Wales", "Northen Territory", 2);
         addQuestion(q5);
     }
 

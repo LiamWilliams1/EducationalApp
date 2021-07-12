@@ -1,12 +1,14 @@
 package au.jcu.edu.cp3406.educationalapp;
 
 import android.provider.BaseColumns;
+
 // creates structure for questions in the form of a table
 // for extension of the app at a later date
 //
 public final class GameStructure {
     private GameStructure() {
     }
+
     //Basecolumns provides a string ID which will automatically increment with each new entry
     public static class QuestionsTable implements BaseColumns {
         public static final String TABLE_NAME = "quiz_questions";

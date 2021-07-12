@@ -1,8 +1,8 @@
 package au.jcu.edu.cp3406.educationalapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class HighscoreActivity extends AppCompatActivity {
 

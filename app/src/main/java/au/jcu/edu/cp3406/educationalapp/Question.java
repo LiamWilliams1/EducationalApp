@@ -4,6 +4,12 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Question implements Parcelable {
+    public static final String DIFFICULTY_EASY = "Easy";
+    public static final String DIFFICULTY_MEDIUM = "Medium";
+    public static final String DIFFICULTY_HARD = "Hard";
+
+
+
     private String question; // declare private variables
     private String option1;
     private String option2;
@@ -84,6 +90,14 @@ public class Question implements Parcelable {
     }
     public void setAnswerNr(int answerNr) {
         this.answerNr = answerNr;
+    }
+
+    public static String[] getAllDifficultyLevels() {
+        return new String[]{
+                DIFFICULTY_EASY,
+                DIFFICULTY_MEDIUM,
+                DIFFICULTY_HARD
+        };
     }
 
 }
